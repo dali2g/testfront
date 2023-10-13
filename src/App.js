@@ -1,23 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Logos from "./components/Logos";
+import List from "./components/List";
+import Blogs from "./components/Blogs";
+import Footer from "./components/Footer";
+import {motion} from 'framer-motion'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="overflow-hidden">
+      <Navbar />
+          <motion.div
+          whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+          transition={{ duration: 0.5 }}
         >
-          Learn React
-        </a>
-      </header>
+      <Hero />
+        </motion.div>
+        <motion.div
+          whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+          transition={{ duration: 0.5 }}
+        >
+      <Logos/>
+      </motion.div>
+      <motion.div
+          whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+          transition={{ duration: 0.5 }}
+        >
+      <List/>
+      </motion.div>
+
+      <motion.div
+          whileInView={{ y: [100, 50, 0], opacity: [0, 0, 1] }}
+          transition={{ duration: 0.5 }}
+        >
+            <Blogs/>
+</motion.div>
+
+    <Footer/>
     </div>
   );
 }
